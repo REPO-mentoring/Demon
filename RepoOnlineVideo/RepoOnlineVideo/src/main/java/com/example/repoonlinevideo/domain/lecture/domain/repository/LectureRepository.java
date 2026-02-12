@@ -10,6 +10,5 @@ import java.util.Optional;
 @Repository
 public interface LectureRepository extends JpaRepository<Lecture, Long> {
     Optional<Lecture> findById(Long id);
-
     List<Lecture> Id(Long id);
 }

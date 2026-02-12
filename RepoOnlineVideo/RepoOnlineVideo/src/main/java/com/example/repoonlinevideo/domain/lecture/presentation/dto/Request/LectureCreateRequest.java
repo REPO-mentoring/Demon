@@ -7,6 +7,7 @@ import lombok.Getter;
 public class LectureCreateRequest {
     @NotBlank
     private String title;
+
     public LectureCreateRequest(String title) {
         this.title = title;
     }

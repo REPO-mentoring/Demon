@@ -30,13 +30,10 @@ public class SubcribeService {
         if (ExistLectureAndUser) {
             throw new IllegalStateException("이미 신청하신 강의입니다.");
         }
-
         Subcribe subcribe = Subcribe.builder()
                 .user(user)
                 .lecture(lecture)
                 .build();
         subcribeRepository.save(subcribe);
     }
-
-
 }

@@ -3,7 +3,6 @@ package com.example.repoonlinevideo.domain.user.domain;
 import com.example.repoonlinevideo.domain.lecture.domain.Lecture;
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.util.ArrayList;
 import java.util.List;
 

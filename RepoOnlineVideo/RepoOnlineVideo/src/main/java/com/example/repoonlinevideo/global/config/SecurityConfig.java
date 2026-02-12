@@ -25,7 +25,6 @@ public class SecurityConfig {
                         .anyRequest().permitAll()
                 )
                 .apply(new FilterConfig(jwtTokenProvider));
-
         return http.build();
     }
 
