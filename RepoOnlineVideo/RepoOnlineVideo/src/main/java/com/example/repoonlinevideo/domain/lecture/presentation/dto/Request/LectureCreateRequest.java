@@ -10,5 +10,4 @@ public class LectureCreateRequest {
     public LectureCreateRequest(String title) {
         this.title = title;
     }
-
 }

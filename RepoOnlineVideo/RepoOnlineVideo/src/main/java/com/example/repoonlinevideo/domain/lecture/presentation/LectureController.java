@@ -1,9 +1,9 @@
 package com.example.repoonlinevideo.domain.lecture.presentation;
 
-import com.example.repoonlinevideo.domain.lecture.domain.Lecture;
 import com.example.repoonlinevideo.domain.lecture.presentation.dto.Request.LectureCreateRequest;
 import com.example.repoonlinevideo.domain.lecture.presentation.dto.Response.LectureReadResponse;
 import com.example.repoonlinevideo.domain.lecture.service.LectureCreateService;
+import com.example.repoonlinevideo.domain.lecture.service.LectureReadMineService;
 import com.example.repoonlinevideo.domain.lecture.service.LectureReadService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,6 +18,7 @@ public class LectureController {
 
     private final LectureCreateService lectureCreateService;
     private final LectureReadService lectureReadService;
+    private final LectureReadMineService lectureReadMineService;
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
@@ -29,5 +30,11 @@ public class LectureController {
     @ResponseStatus(HttpStatus.OK)
     public List<LectureReadResponse> getLectureList() {
         return lectureReadService.readAll();
+    }
+
+    @GetMapping("/mine")
+    @ResponseStatus(HttpStatus.OK)
+    public List<LectureReadResponse> getMineLectureList() {
+        return lectureReadMineService.getSubcribeByUserId();
     }
 }
