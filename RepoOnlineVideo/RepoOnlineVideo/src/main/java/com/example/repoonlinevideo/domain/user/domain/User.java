@@ -26,6 +26,5 @@ public class User {
     private String password;
 
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "user")
-    @JoinColumn(name = "lecture_id")
     private List<Lecture> lecture = new ArrayList<>();
 }
