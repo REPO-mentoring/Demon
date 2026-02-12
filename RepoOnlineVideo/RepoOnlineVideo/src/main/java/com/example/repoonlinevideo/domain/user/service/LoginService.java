@@ -29,8 +29,6 @@ public class LoginService {
 
         String refreshToken =
                 jwtTokenProvider.generateRefreshToken(user.getUsername());
-
-
         return new LoginResponse(accessToken, refreshToken);
     }
 }

@@ -22,6 +22,7 @@ public class UserController {
     public void signup(@Valid @RequestBody SignupRequest signupRequest) {
         signupService.signUp(signupRequest);
     }
+
     @PostMapping("/login")
     @ResponseStatus(HttpStatus.OK)
     public LoginResponse login(@RequestBody LoginRequest loginRequest) {
