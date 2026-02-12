@@ -2,7 +2,7 @@ package com.example.repoonlinevideo.global.jwt;
 
 import com.example.repoonlinevideo.domain.auth.domain.RefreshToken;
 import com.example.repoonlinevideo.domain.auth.domain.repository.RefreshTokenRepository;
-import com.example.repoonlinevideo.global.auth.AuthDetailsService;
+import com.example.repoonlinevideo.global.detail.DetailService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
@@ -26,7 +26,7 @@ import java.util.Date;
 public class JwtTokenProvider {
 
     private final JwtProperty jwtProperty;
-    private final AuthDetailsService authDetailsService;
+    private final DetailService detailService;
     private final RefreshTokenRepository refreshTokenRepository;
 
     private SecretKey key;
@@ -76,7 +76,7 @@ public class JwtTokenProvider {
 
     public Authentication getAuthentication(String token) {
         UserDetails userDetails =
-                authDetailsService.loadUserByUsername(getSubject(token));
+                detailService.loadUserByUsername(getSubject(token));
 
         return new UsernamePasswordAuthenticationToken(
                 userDetails,
